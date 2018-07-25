@@ -23,9 +23,9 @@ class Engine:
 		raw_input = driver.read() #retrieve snapshot of sensor status
 		processed_input = process(raw_input)
 		output.execute(processed_input)
-		if(start_time + timestep > time.time())
+		if (start_time + timestep > time.time()):
 			time.sleep(time.time() - (start_time + timestep)
-		if(!done)
+		if not done:
 			cycle(timestep)
 
 class Output(threading.Thread): #move to separate file
