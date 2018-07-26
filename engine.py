@@ -2,7 +2,7 @@ import numpy as np
 import time
 import threading
 
-class Engine:
+class Engine(threading.Thread):
 	mat_activation = np.matrix([1,0],[0,1]) 
 	TIMESTEP = 1 #in seconds
 
@@ -25,7 +25,7 @@ class Engine:
 		output.execute(processed_input)
 		if(start_time + timestep > time.time()):
 			time.sleep(time.time() - (start_time + timestep)
-		if(!done):
+		if not done:
 			cycle(timestep)
 
 class Output(threading.Thread): #move to separate file
