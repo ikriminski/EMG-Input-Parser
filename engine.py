@@ -25,7 +25,6 @@ class Engine:
 		output.execute(processed_input)
 		if(start_time + timestep > time.time()):
 			time.sleep(time.time() - (start_time + timestep)
-		if not done:
 		if(!done):
 			cycle(timestep)
 
