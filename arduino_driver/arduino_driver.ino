@@ -1,7 +1,7 @@
-static int NUMBER_OF_PINS = 0;
+static int NUMBER_OF_PINS = 2;
 
-float PINS[0]={};
-float pin_values[0]={};
+float PINS[2]={0,1};
+float pin_values[2]={0.4777,0.68881};
 
 void setup() {
   Serial.begin(9600);
@@ -15,19 +15,18 @@ void loop() {
 }
 
 void readPins(){
-  for (int i = 0; i < NUMBER_OF_PINS; i++){
+  /*for (int i = 0; i < NUMBER_OF_PINS; i++){
     pin_values[i] = analogRead(PINS[i]);
   }
+  */
 }
 
 void sendPins(){
   for (int i = 0; i < NUMBER_OF_PINS; i++){
-    Serial.write((int) pin_values[i]);
+    Serial.print(pin_values[i]);
     Serial.write(':');
-    Serial.write(i);
-    Serial.write(';');
   }
-  Serial.write("\n poop");
+  Serial.write('\n');
 }
 
 void stall(){
