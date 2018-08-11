@@ -15,10 +15,10 @@ void loop() {
 }
 
 void readPins(){
-  /*for (int i = 0; i < NUMBER_OF_PINS; i++){
-    pin_values[i] = analogRead(PINS[i]);
+  for (int i = 0; i < NUMBER_OF_PINS; i++){
+    //pin_values[i] = analogRead(PINS[i]);
+    pin_values[i] = pin_values[i] + 1;
   }
-  */
 }
 
 void sendPins(){
@@ -27,6 +27,7 @@ void sendPins(){
     Serial.write(':');
   }
   Serial.write('\n');
+  Serial.flush();
 }
 
 void stall(){
